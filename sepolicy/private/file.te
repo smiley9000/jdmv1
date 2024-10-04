@@ -1,0 +1,21 @@
+type carrier_file, fs_type;
+allow carrier_file labeledfs:filesystem associate;
+
+type keydata_data_file, fs_type;
+allow keydata_data_file labeledfs:filesystem associate;
+
+type keyrefuge_data_file, fs_type;
+allow keyrefuge_data_file labeledfs:filesystem associate;
+
+type omr_file, fs_type;
+allow omr_file labeledfs:filesystem associate;
+
+
+type dsp_file, fs_type;
+allow dsp_file labeledfs:filesystem associate;
+
+type persist_file, fs_type;
+allow firmware_file labeledfs:filesystem associate;
+
+type firmware_file, fs_type;
+allow firmware_file labeledfs:filesystem associate;
