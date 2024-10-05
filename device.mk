@@ -20,32 +20,11 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-4096-dalvik-heap.mk)
 
 # Audio
 PRODUCT_PACKAGES += \
-    android.hardware.audio@7.0-impl \
-    android.hardware.audio.effect@7.0-impl \
-    android.hardware.audio.service
-
-PRODUCT_PACKAGES += \
-    audio.bluetooth.default \
-    android.hardware.bluetooth.audio-impl
-
-PRODUCT_PACKAGES += \
     MtkInCallService
 
+# Biometrics
 PRODUCT_PACKAGES += \
-    MtkInCallService
-
-PRODUCT_PACKAGES += \
-    libaudiofoundation.vendor \
-    libbluetooth_audio_session \
-    libalsautils \
-    libnbaio_mono \
-    libtinycompress \
-    libdynproc \
-    libhapticgenerator
-
-PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/audio/,$(TARGET_COPY_OUT_VENDOR)/etc)
-
+    $(DEVICE_PATH)/init/init.face_service.rc:$(TARGET_COPY_OUT_SYSTEM)/etc/init/init.face_service.rc 
 
 # Bluetooth
 PRODUCT_PACKAGES += \
@@ -56,40 +35,11 @@ PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/bluetooth/audio/config/sysbta_audio_policy_configuration.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysbta_audio_policy_configuration.xml \
     $(DEVICE_PATH)/bluetooth/audio/config/sysbta_audio_policy_configuration_7_0.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysbta_audio_policy_configuration_7_0.xml
 
-
-# Camera
-PRODUCT_PACKAGES += \
-    android.hardware.camera.device@3.6.vendor \
-    android.hardware.camera.provider@2.6.vendor \
-    libcamera2ndk_vendor
-
 # Charger
 PRODUCT_PACKAGES += \
     charger_res_images_vendor \
+    $(DEVICE_PATH)/init/init.sec-charger.rc:$(TARGET_COPY_OUT_SYSTEM)/etc/init/init.sec-charger.rc \
     libsuspend
-
-# Cgroup
-PRODUCT_COPY_FILES += \
-    system/core/libprocessgroup/profiles/cgroups_30.json:$(TARGET_COPY_OUT_VENDOR)/etc/cgroups.json \
-    $(LOCAL_PATH)/configs/task_profiles.json:$(TARGET_COPY_OUT_VENDOR)/etc/task_profiles.json
-
-# Display
-PRODUCT_PACKAGES += \
-    android.hardware.graphics.composer@2.1-service \
-    android.hardware.memtrack-service.mediatek-mali \
-
-PRODUCT_PACKAGES += \
-    android.hardware.graphics.allocator@4.0.vendor \
-    libdrm.vendor \
-    libutils-v32
-
-# DRM
-PRODUCT_PACKAGES += \
-    android.hardware.drm-service.clearkey
-
-PRODUCT_PACKAGES += \
-    android.hardware.drm@1.4.vendor \
-    libprotobuf-cpp-lite-3.9.1-vendorcompat
 
 # Dynamic Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
@@ -98,64 +48,11 @@ PRODUCT_BUILD_SUPER_PARTITION := false
 PRODUCT_PACKAGES += \
     fastbootd
 
-# Gatekeeper
-PRODUCT_PACKAGES += \
-    android.hardware.gatekeeper@1.0-impl \
-    android.hardware.gatekeeper@1.0-service
-
-# GNSS
-PRODUCT_PACKAGES += \
-    android.hardware.gnss.measurement_corrections@1.1.vendor \
-    android.hardware.gnss.visibility_control@1.0.vendor \
-    android.hardware.gnss@1.1.vendor \
-    android.hardware.gnss@2.1.vendor \
-    android.hardware.gnss-V1-ndk.vendor
-
-# Health
-PRODUCT_PACKAGES += \
-    android.hardware.health@2.1-impl \
-    android.hardware.health@2.1-impl.recovery \
-    android.hardware.health@2.1-service
-
 # HIDL
 PRODUCT_PACKAGES += \
     libhidltransport \
-    libhidltransport.vendor \
-    libhwbinder.vendor \
-    android.hidl.allocator@1.0.vendor
-
-# Keymaster
-PRODUCT_PACKAGES += \
-    libkeymaster4_1support.vendor \
-    libkeymaster41.vendor \
-    libpuresoftkeymasterdevice.vendor \
-    libsoft_attestation_cert.vendor \
-    android.hardware.keymaster@4.1.vendor \
-    android.hardware.hardware_keystore.km41.xml
-
-# Light
-PRODUCT_PACKAGES += \
-    android.hardware.light@2.0.vendor:64 \
-	android.hardware.light-V1-ndk_platform.vendor 
-
-# Media
-PRODUCT_PACKAGES += \
-    libcodec2_hidl@1.1.vendor \
-    libcodec2_hidl@1.2.vendor \
-    libavservices_minijail_vendor \
-    libstagefright_softomx_plugin.vendor \
-    libsfplugin_ccodec_utils.vendor \
-    libcodec2_soft_common.vendor \
-    libstagefright_foundation-v33
-
-PRODUCT_COPY_FILES += \
-    frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_audio.xml \
-    frameworks/av/media/libstagefright/data/media_codecs_google_video_le.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_video_le.xml
-
-PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/seccomp,$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy) \
-    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/media,$(TARGET_COPY_OUT_VENDOR)/etc)
-
+    libhardware \
+    libhwbinder
 
 # Overlays
 PRODUCT_PACKAGES += \
@@ -170,28 +67,9 @@ DEVICE_PACKAGE_OVERLAYS += \
 
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
-
-# Power
-PRODUCT_PACKAGES += \
-    android.hardware.power-service-mediatek \
-    android.hardware.power@1.3.vendor
-
-PRODUCT_PACKAGES += \
-    vendor.mediatek.hardware.mtkpower@1.0.vendor \
-    vendor.mediatek.hardware.mtkpower@1.1.vendor \
-    vendor.mediatek.hardware.mtkpower@1.2.vendor
-
-PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/perf,$(TARGET_COPY_OUT_VENDOR)/etc)
-
 # Power Off Alarm
 PRODUCT_PACKAGES += \
     PowerOffAlarm
-
-# Radio
-PRODUCT_PACKAGES += \
-    android.hardware.radio.config@1.3.vendor \
-    android.hardware.radio@1.6.vendor
 
 # Rootdir
 PRODUCT_PACKAGES += \
@@ -210,55 +88,42 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     init.recovery.mt6768.rc
 
-# Secure Element
-PRODUCT_PACKAGES += \
-    android.hardware.secure_element@1.2.vendor
-
-# Sensors
-PRODUCT_PACKAGES += \
-    libshim_sensors \
-    libsensorndkbridge \
-    android.hardware.sensors@1.0.vendor \
-    android.hardware.sensors@2.1.vendor \
-    android.frameworks.sensorservice@1.0.vendor \
-    android.hardware.sensors@2.1-service.earth-multihal
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/hals.conf
-
 # Shipping API level
 PRODUCT_SHIPPING_API_LEVEL := 31
 
-# Thermal
-PRODUCT_PACKAGES += \
-    android.hardware.thermal@1.0-impl
-
-PRODUCT_PACKAGES += \
-    android.hardware.thermal@2.0.vendor
-
-# USB
-PRODUCT_PACKAGES += \
-    android.hardware.usb@1.3.vendor \
-    android.hardware.usb.gadget@1.1.vendor
-
-# Vibrator
-PRODUCT_PACKAGES += \
-    android.hardware.vibrator-service.mediatek
-
-# Wi-Fi
-PRODUCT_PACKAGES += \
-    wpa_supplicant \
-    hostapd \
-    libwifi-hal-wrapper \
-    android.hardware.wifi-service
-
-PRODUCT_PACKAGES += \
-    android.hardware.tetheroffload.config@1.0.vendor \
-    android.hardware.tetheroffload.control@1.0.vendor \
-    android.hardware.tetheroffload.control@1.1.vendor
-
+# SEC_RIL
 PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/wifi/,$(TARGET_COPY_OUT_VENDOR)/etc/wifi)
+    $(DEVICE_PATH)/init/init-sec_ril.rc:$(TARGET_COPY_OUT_SYSTEM)/etc/init/init-sec_ril.rc \
+
+    $(DEVICE_PATH)/secril/bin/secril_config_svc.so:$(TARGET_COPY_OUT_SYSTEM)/etc/secril/bin/secril_config_svc.so \
+    $(DEVICE_PATH)/secril/bin/hw/mtkfusionrild.so:$(TARGET_COPY_OUT_SYSTEM)/etc/secril/bin/hw/mtkfusionrild.so \
+    $(DEVICE_PATH)/secril/bin/hw/rild.so:$(TARGET_COPY_OUT_SYSTEM)/etc/secril/bin/hw/rild.so \
+    $(DEVICE_PATH)/secril/etc/init/mtkrild.rc:$(TARGET_COPY_OUT_SYSTEM)/etc/secril/etc/init/mtkrild.rc \
+    $(DEVICE_PATH)/secril/etc/init/init.vendor.rilcommon.rc :$(TARGET_COPY_OUT_SYSTEM)/etc/secril/etc/init/init.vendor.rilcommon.rc \
+    $(DEVICE_PATH)/secril/etc/init/networksetting.rc :$(TARGET_COPY_OUT_SYSTEM)/etc/secril/etc/init/networksetting.rc \
+    $(DEVICE_PATH)/secril/etc/init/vendor.sem.rilchip.rc :$(TARGET_COPY_OUT_SYSTEM)/etc/secril/etc/init/vendor.sem.rilchip.rc \
+    $(DEVICE_PATH)/secril/lib64/android.hardware.radio.config@1.3.so:$(TARGET_COPY_OUT_SYSTEM)/etc/secril/lib64/android.hardware.radio.config@1.3.so \
+    $(DEVICE_PATH)/secril/lib64/android.hardware.radio@1.6.so:$(TARGET_COPY_OUT_SYSTEM)/etc/secril/lib64/android.hardware.radio@1.6.so \
+    $(DEVICE_PATH)/secril/lib64/libcarrierconfig.so:$(TARGET_COPY_OUT_SYSTEM)/etc/secril/lib64/libcarrierconfig.so \
+    $(DEVICE_PATH)/secril/lib64/libmtkconfig.so:$(TARGET_COPY_OUT_SYSTEM)/etc/secril/lib64/libmtkconfig.so \
+    $(DEVICE_PATH)/secril/lib64/libmtkconfigutils.so:$(TARGET_COPY_OUT_SYSTEM)/etc/secril/lib64/libmtkconfigutils.so \
+    $(DEVICE_PATH)/secril/lib64/libmtk-fusion-ril-prop-vsim.so:$(TARGET_COPY_OUT_SYSTEM)/etc/secril/lib64/libmtk-fusion-ril-prop-vsim.so \
+    $(DEVICE_PATH)/secril/lib64/libmtkmipc-ril.so:$(TARGET_COPY_OUT_SYSTEM)/etc/secril/lib64/libmtkmipc-ril.so \
+    $(DEVICE_PATH)/secril/lib64/libmtknetcap.so:$(TARGET_COPY_OUT_SYSTEM)/etc/secril/lib64/libmtknetcap.so \
+    $(DEVICE_PATH)/secril/lib64/libmtk-ril.so:$(TARGET_COPY_OUT_SYSTEM)/etc/secril/lib64/libmtk-ril.so \
+    $(DEVICE_PATH)/secril/lib64/libmtkrilutils.so:$(TARGET_COPY_OUT_SYSTEM)/etc/secril/lib64/libmtkrilutils.so \
+    $(DEVICE_PATH)/secril/lib64/libril_sem.so:$(TARGET_COPY_OUT_SYSTEM)/etc/secril/lib64/libril_sem.so \
+    $(DEVICE_PATH)/secril/lib64/librilfusion.so:$(TARGET_COPY_OUT_SYSTEM)/etc/secril/lib64/librilfusion.so \
+    $(DEVICE_PATH)/secril/lib64/libsec-ril.so:$(TARGET_COPY_OUT_SYSTEM)/etc/secril/lib64/libsec-ril.so \
+    $(DEVICE_PATH)/secril/lib64/libsecril-client.so:$(TARGET_COPY_OUT_SYSTEM)/etc/secril/lib64/libsecril-client.so \
+    $(DEVICE_PATH)/secril/lib64/libSemTelephonyProps.so:$(TARGET_COPY_OUT_SYSTEM)/etc/secril/lib64/libSemTelephonyProps.so \
+    $(DEVICE_PATH)/secril/lib64/libviamipc-ril.so:$(TARGET_COPY_OUT_SYSTEM)/etc/secril/lib64/libviamipc-ril.so \
+    $(DEVICE_PATH)/secril/lib64/libvia-ril.so:$(TARGET_COPY_OUT_SYSTEM)/etc/secril/lib64/libvia-ril.so \
+    $(DEVICE_PATH)/secril/lib64/vendor.mediatek.hardware.mtkradioex@3.0.so:$(TARGET_COPY_OUT_SYSTEM)/etc/secril/lib64/vendor.mediatek.hardware.mtkradioex@3.0.so 
+
+# VNDK API
+PRODUCT_TARGET_VNDK_VERSION := 31
+PRODUCT_EXTRA_VNDK_VERSIONS := 31
 
 # Inherit the proprietary files
 # Soong namespaces
@@ -266,7 +131,4 @@ PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
     hardware/samsung_ext
 
-PRODUCT_SHIPPING_API_LEVEL := 31
 
-# VNDK API
-PRODUCT_TARGET_VNDK_VERSION := 31
