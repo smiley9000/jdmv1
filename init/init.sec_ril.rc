@@ -1,0 +1,34 @@
+# Copyright (C) 2012 The Android Open Source Project
+#
+# IMPORTANT: Do not create world writable files or directories.
+# This is a common source of Android security bugs.
+#
+
+#SEC_RIL Mount
+on init
+	mount none /system/secril/bin/secril_config_svc.so /vendor/bin/secril_config_svc.so bind
+	mount none /system/secril/bin/hw/mtkfusionrild.so /vendor/bin/hw/mtkfusionrild.so bind
+	mount none /system/secril/bin/hw/rild.so /vendor/bin/hw/rild.so bind
+	mount none /system/secril/etc/init/mtkrild.rc /vendor/etc/init/mtkrild.rc bind
+	mount none /system/secril/etc/init/init.vendor.rilcommon.rc /vendor/etc/init/init.vendor.rilcommon.rc bind
+	mount none /system/secril/etc/init/networksetting.rc /vendor/etc/init/networksetting.rc bind
+	mount none /system/secril/etc/init/vendor.sem.rilchip.rc /vendor/etc/init/vendor.sem.rilchip.rc bind
+	mount none /system/secril/lib/libcarrierconfig /vendor/lib64/libcarrierconfig.so bind
+	mount none /system/secril/lib64/android.hardware.radio.config@1.3.so /vendor/lib64/android.hardware.radio.config@1.3.so bind
+	mount none /system/secril/lib64/android.hardware.radio@1.6.so /vendor/lib64/android.hardware.radio@1.6.so bind
+	mount none /system/secril/lib64/libcarrierconfig.so /vendor/lib64/libcarrierconfig.so bind
+	mount none /system/secril/lib64/libmtkconfig.so /vendor/lib64/libmtkconfig.so bind
+	mount none /system/secril/lib64/libmtkconfigutils.so /vendor/lib64/libmtkconfigutils.so bind
+	mount none /system/secril/lib64/libmtk-fusion-ril-prop-vsim.so /vendor/lib64/libmtk-fusion-ril-prop-vsim.so bind
+	mount none /system/secril/lib64/libmtkmipc-ril.so /vendor/lib64/libmtkmipc-ril.so bind
+	mount none /system/secril/lib64/libmtknetcap.so /vendor/lib64/libmtknetcap.so bind
+	mount none /system/secril/lib64/libmtk-ril.so /vendor/lib64/libmtk-ril.so bind
+	mount none /system/secril/lib64/libmtkrilutils.so /vendor/lib64/libmtkrilutils.so bind
+	mount none /system/secril/lib64/libril_sem.so /vendor/lib64/libril_sem.so bind
+	mount none /system/secril/lib64/librilfusion.so /vendor/lib64/librilfusion.so bind bind
+	mount none /system/secril/lib64/libsec-ril.so /vendor/lib64/libsec-ril.so bind
+	mount none /system/secril/lib64/libsecril-client.so /vendor/lib64/libsecril-client.so bind
+	mount none /system/secril/lib64/libSemTelephonyProps.so /vendor/lib64/libSemTelephonyProps.so bind
+	mount none /system/secril/lib64/libviamipc-ril.so /vendor/lib64/libviamipc-ril.so bind
+	mount none /system/secril/lib64/libvia-ril.so /vendor/lib64/libvia-ril.so bind
+	mount none /system/secril/lib64/vendor.mediatek.hardware.mtkradioex@3.0.so /vendor/lib64/vendor.mediatek.hardware.mtkradioex@3.0.so bind

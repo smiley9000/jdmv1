@@ -1,0 +1,14 @@
+# Copyright (C) 2012 The Android Open Source Project
+#
+# IMPORTANT: Do not create world writable files or directories.
+# This is a common source of Android security bugs.
+#
+
+#UnMount Vendor Biometrics
+on init
+	mount none /system/secril/etc/unmount /vendor/bin/hw/vendor.samsung.hardware.biometrics.face.jdm-service bind
+	mount none /system/secril/etc/unmount /vendor/lib64/android.hardware.biometrics.common-V1-ndk_platform.so bind
+	mount none /system/secril/etc/unmount /vendor/lib64/android.hardware.biometrics.face-V1-ndk_platform.so bind
+	mount none /system/secril/etc/unmount /vendor/lib64/vendor.samsung.hardware.biometrics.face-V1-ndk_platform.so bind
+	mount none /system/secril/etc/unmount /vendor/app/anc_face_unlock/anculk_model_tee bind
+	mount none /system/secril/etc/unmount /vendor/etc/init/vendor.samsung.hardware.biometrics.face.jdm-service.rc bind
