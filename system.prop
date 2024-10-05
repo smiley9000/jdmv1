@@ -53,3 +53,4 @@ debug.sf.late.app.duration=20000000
 debug.sf.late.sf.duration=27600000
 debug.sf.treat_170m_as_sRGB=1
 debug.sf.use_phase_offsets_as_durations=1
+persist.sys.brightness.low.gamma=true
