@@ -6,13 +6,5 @@
   {
     "repository": "android_hardware_mediatek",
     "target_path": "hardware/mediatek"
-  },
-  {
-    "repository": "android_hardware_xiaomi",
-    "target_path": "hardware/xiaomi"
-  },
-  {
-    "repository": "android_kernel_xiaomi_earth",
-    "target_path": "kernel/xiaomi/earth"
   }
 ]
