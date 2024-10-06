@@ -24,7 +24,7 @@ PRODUCT_PACKAGES += \
 
 # Biometrics
 PRODUCT_PACKAGES += \
-    $(DEVICE_PATH)/init/init.face_service.rc:$(TARGET_COPY_OUT_SYSTEM)/etc/init/init.face_service.rc 
+#    $(DEVICE_PATH)/init/init.face_service.rc:$(TARGET_COPY_OUT_SYSTEM)/etc/init/init.face_service.rc 
 
 # Bluetooth
 PRODUCT_PACKAGES += \
@@ -96,29 +96,29 @@ PRODUCT_PACKAGES += \
 PRODUCT_SHIPPING_API_LEVEL := 31
 
 # SEC_RIL
-PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/init/init-sec_ril.rc:$(TARGET_COPY_OUT_SYSTEM)/etc/init/init-sec_ril.rc \
-    $(DEVICE_PATH)/secril/bin/secril_config_svc.so:$(TARGET_COPY_OUT_SYSTEM)/etc/secril/bin/secril_config_svc.so \
-    $(DEVICE_PATH)/secril/bin/hw/mtkfusionrild.so:$(TARGET_COPY_OUT_SYSTEM)/etc/secril/bin/hw/mtkfusionrild.so \
-    $(DEVICE_PATH)/secril/bin/hw/rild.so:$(TARGET_COPY_OUT_SYSTEM)/etc/secril/bin/hw/rild.so \
-    $(DEVICE_PATH)/secril/lib64/android.hardware.radio.config@1.3.so:$(TARGET_COPY_OUT_SYSTEM)/etc/secril/lib64/android.hardware.radio.config@1.3.so \
-    $(DEVICE_PATH)/secril/lib64/android.hardware.radio@1.6.so:$(TARGET_COPY_OUT_SYSTEM)/etc/secril/lib64/android.hardware.radio@1.6.so \
-    $(DEVICE_PATH)/secril/lib64/libcarrierconfig.so:$(TARGET_COPY_OUT_SYSTEM)/etc/secril/lib64/libcarrierconfig.so \
-    $(DEVICE_PATH)/secril/lib64/libmtkconfig.so:$(TARGET_COPY_OUT_SYSTEM)/etc/secril/lib64/libmtkconfig.so \
-    $(DEVICE_PATH)/secril/lib64/libmtkconfigutils.so:$(TARGET_COPY_OUT_SYSTEM)/etc/secril/lib64/libmtkconfigutils.so \
-    $(DEVICE_PATH)/secril/lib64/libmtk-fusion-ril-prop-vsim.so:$(TARGET_COPY_OUT_SYSTEM)/etc/secril/lib64/libmtk-fusion-ril-prop-vsim.so \
-    $(DEVICE_PATH)/secril/lib64/libmtkmipc-ril.so:$(TARGET_COPY_OUT_SYSTEM)/etc/secril/lib64/libmtkmipc-ril.so \
-    $(DEVICE_PATH)/secril/lib64/libmtknetcap.so:$(TARGET_COPY_OUT_SYSTEM)/etc/secril/lib64/libmtknetcap.so \
-    $(DEVICE_PATH)/secril/lib64/libmtk-ril.so:$(TARGET_COPY_OUT_SYSTEM)/etc/secril/lib64/libmtk-ril.so \
-    $(DEVICE_PATH)/secril/lib64/libmtkrilutils.so:$(TARGET_COPY_OUT_SYSTEM)/etc/secril/lib64/libmtkrilutils.so \
-    $(DEVICE_PATH)/secril/lib64/libril_sem.so:$(TARGET_COPY_OUT_SYSTEM)/etc/secril/lib64/libril_sem.so \
-    $(DEVICE_PATH)/secril/lib64/librilfusion.so:$(TARGET_COPY_OUT_SYSTEM)/etc/secril/lib64/librilfusion.so \
-    $(DEVICE_PATH)/secril/lib64/libsec-ril.so:$(TARGET_COPY_OUT_SYSTEM)/etc/secril/lib64/libsec-ril.so \
-    $(DEVICE_PATH)/secril/lib64/libsecril-client.so:$(TARGET_COPY_OUT_SYSTEM)/etc/secril/lib64/libsecril-client.so \
-    $(DEVICE_PATH)/secril/lib64/libSemTelephonyProps.so:$(TARGET_COPY_OUT_SYSTEM)/etc/secril/lib64/libSemTelephonyProps.so \
-    $(DEVICE_PATH)/secril/lib64/libviamipc-ril.so:$(TARGET_COPY_OUT_SYSTEM)/etc/secril/lib64/libviamipc-ril.so \
-    $(DEVICE_PATH)/secril/lib64/libvia-ril.so:$(TARGET_COPY_OUT_SYSTEM)/etc/secril/lib64/libvia-ril.so \
-    $(DEVICE_PATH)/secril/lib64/vendor.mediatek.hardware.mtkradioex@3.0.so:$(TARGET_COPY_OUT_SYSTEM)/etc/secril/lib64/vendor.mediatek.hardware.mtkradioex@3.0.so 
+#PRODUCT_COPY_FILES += \
+##    $(DEVICE_PATH)/init/init-sec_ril.rc:$(TARGET_COPY_OUT_SYSTEM)/etc/init/init-sec_ril.rc \
+##    $(DEVICE_PATH)/secril/bin/secril_config_svc.so:$(TARGET_COPY_OUT_SYSTEM)/etc/secril/bin/secril_config_svc.so \
+#    $(DEVICE_PATH)/secril/bin/hw/mtkfusionrild.so:$(TARGET_COPY_OUT_SYSTEM)/etc/secril/bin/hw/mtkfusionrild.so \
+#    $(DEVICE_PATH)/secril/bin/hw/rild.so:$(TARGET_COPY_OUT_SYSTEM)/etc/secril/bin/hw/rild.so \
+#    $(DEVICE_PATH)/secril/lib64/android.hardware.radio.config@1.3.so:$(TARGET_COPY_OUT_SYSTEM)/etc/secril/lib64/android.hardware.radio.config@1.3.so \
+#    $(DEVICE_PATH)/secril/lib64/android.hardware.radio@1.6.so:$(TARGET_COPY_OUT_SYSTEM)/etc/secril/lib64/android.hardware.radio@1.6.so \
+#    $(DEVICE_PATH)/secril/lib64/libcarrierconfig.so:$(TARGET_COPY_OUT_SYSTEM)/etc/secril/lib64/libcarrierconfig.so \
+#    $(DEVICE_PATH)/secril/lib64/libmtkconfig.so:$(TARGET_COPY_OUT_SYSTEM)/etc/secril/lib64/libmtkconfig.so \
+#    $(DEVICE_PATH)/secril/lib64/libmtkconfigutils.so:$(TARGET_COPY_OUT_SYSTEM)/etc/secril/lib64/libmtkconfigutils.so \
+#    $(DEVICE_PATH)/secril/lib64/libmtk-fusion-ril-prop-vsim.so:$(TARGET_COPY_OUT_SYSTEM)/etc/secril/lib64/libmtk-fusion-ril-prop-vsim.so \
+#    $(DEVICE_PATH)/secril/lib64/libmtkmipc-ril.so:$(TARGET_COPY_OUT_SYSTEM)/etc/secril/lib64/libmtkmipc-ril.so \
+#    $(DEVICE_PATH)/secril/lib64/libmtknetcap.so:$(TARGET_COPY_OUT_SYSTEM)/etc/secril/lib64/libmtknetcap.so \
+#    $(DEVICE_PATH)/secril/lib64/libmtk-ril.so:$(TARGET_COPY_OUT_SYSTEM)/etc/secril/lib64/libmtk-ril.so \
+#    $(DEVICE_PATH)/secril/lib64/libmtkrilutils.so:$(TARGET_COPY_OUT_SYSTEM)/etc/secril/lib64/libmtkrilutils.so \
+#    $(DEVICE_PATH)/secril/lib64/libril_sem.so:$(TARGET_COPY_OUT_SYSTEM)/etc/secril/lib64/libril_sem.so \
+#    $(DEVICE_PATH)/secril/lib64/librilfusion.so:$(TARGET_COPY_OUT_SYSTEM)/etc/secril/lib64/librilfusion.so \
+#    $(DEVICE_PATH)/secril/lib64/libsec-ril.so:$(TARGET_COPY_OUT_SYSTEM)/etc/secril/lib64/libsec-ril.so \
+#    $(DEVICE_PATH)/secril/lib64/libsecril-client.so:$(TARGET_COPY_OUT_SYSTEM)/etc/secril/lib64/libsecril-client.so \
+#    $(DEVICE_PATH)/secril/lib64/libSemTelephonyProps.so:$(TARGET_COPY_OUT_SYSTEM)/etc/secril/lib64/libSemTelephonyProps.so \
+#    $(DEVICE_PATH)/secril/lib64/libviamipc-ril.so:$(TARGET_COPY_OUT_SYSTEM)/etc/secril/lib64/libviamipc-ril.so \
+#    $(DEVICE_PATH)/secril/lib64/libvia-ril.so:$(TARGET_COPY_OUT_SYSTEM)/etc/secril/lib64/libvia-ril.so \
+#    $(DEVICE_PATH)/secril/lib64/vendor.mediatek.hardware.mtkradioex@3.0.so:$(TARGET_COPY_OUT_SYSTEM)/etc/secril/lib64/vendor.mediatek.hardware.mtkradioex@3.0.so 
 
 # VNDK API
 PRODUCT_TARGET_VNDK_VERSION := 31
