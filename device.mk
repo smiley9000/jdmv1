@@ -98,14 +98,9 @@ PRODUCT_SHIPPING_API_LEVEL := 31
 # SEC_RIL
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/init/init-sec_ril.rc:$(TARGET_COPY_OUT_SYSTEM)/etc/init/init-sec_ril.rc \
-
     $(DEVICE_PATH)/secril/bin/secril_config_svc.so:$(TARGET_COPY_OUT_SYSTEM)/etc/secril/bin/secril_config_svc.so \
     $(DEVICE_PATH)/secril/bin/hw/mtkfusionrild.so:$(TARGET_COPY_OUT_SYSTEM)/etc/secril/bin/hw/mtkfusionrild.so \
     $(DEVICE_PATH)/secril/bin/hw/rild.so:$(TARGET_COPY_OUT_SYSTEM)/etc/secril/bin/hw/rild.so \
-    $(DEVICE_PATH)/secril/etc/init/mtkrild.rc:$(TARGET_COPY_OUT_SYSTEM)/etc/secril/etc/init/mtkrild.rc \
-    $(DEVICE_PATH)/secril/etc/init/init.vendor.rilcommon.rc :$(TARGET_COPY_OUT_SYSTEM)/etc/secril/etc/init/init.vendor.rilcommon.rc \
-    $(DEVICE_PATH)/secril/etc/init/networksetting.rc :$(TARGET_COPY_OUT_SYSTEM)/etc/secril/etc/init/networksetting.rc \
-    $(DEVICE_PATH)/secril/etc/init/vendor.sem.rilchip.rc :$(TARGET_COPY_OUT_SYSTEM)/etc/secril/etc/init/vendor.sem.rilchip.rc \
     $(DEVICE_PATH)/secril/lib64/android.hardware.radio.config@1.3.so:$(TARGET_COPY_OUT_SYSTEM)/etc/secril/lib64/android.hardware.radio.config@1.3.so \
     $(DEVICE_PATH)/secril/lib64/android.hardware.radio@1.6.so:$(TARGET_COPY_OUT_SYSTEM)/etc/secril/lib64/android.hardware.radio@1.6.so \
     $(DEVICE_PATH)/secril/lib64/libcarrierconfig.so:$(TARGET_COPY_OUT_SYSTEM)/etc/secril/lib64/libcarrierconfig.so \
