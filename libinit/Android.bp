@@ -5,7 +5,7 @@
 //
 
 cc_library_static {
-    name: "libinit_xiaomi_earth",
+    name: "init_samsung_a05m",
     srcs: [
         "libinit_variant.cpp",
         "libinit_utils.cpp",
@@ -16,9 +16,9 @@ cc_library_static {
 }
 
 cc_library_static {
-    name: "init_xiaomi_earth",
-    srcs: ["init_xiaomi_earth.cpp"],
-    whole_static_libs: ["libinit_xiaomi_earth"],
+    name: "init_samsung_a05m",
+    srcs: ["init_samsung_a05m.cpp"],
+    whole_static_libs: ["libinit_samsung_a05m"],
     include_dirs: ["system/core/init"],
     recovery_available: true,
 }
