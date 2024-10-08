@@ -1,3 +1,9 @@
-# Global
-# ro.fota.oem                        u:object_r:build_prop:s0
-# ro.product.marketname              u:object_r:build_prop:s0
+# Sec Ril
+/(product|system/product)/vendor_overlay/[0-9]+/etc(/.*)?      u:object_r:vendor_configs_file:s0
+/(product|system/product)/vendor_overlay/[0-9]+/lib(64)?(/.*)?     u:object_r:vendor_file:s0
+
+/(product|system/product)/vendor_overlay/[0-9]+/bin/secril_config_svc u:object_r:vendor_secril_config_svc_exec:s0
+/(product|system/product)/vendor_overlay/[0-9]+/bin/hw/rild u:object_r:rild_exec:s0
+
+
+
