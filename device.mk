@@ -113,4 +113,5 @@ PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
     hardware/samsung_ext
 
-
+# Inherit the proprietary files
+$(call inherit-product, vendor/samsung/a05m/a05m-vendor.mk)
