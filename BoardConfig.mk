@@ -186,3 +186,6 @@ BOARD_BUILD_VENDORIMAGE := false
 BUILD_WITHOUT_VENDOR := true
 TARGET_USES_PREBUILT_VENDOR_SEPOLICY := true
 TARGET_HAS_FUSEBLK_SEPOLICY_ON_VENDOR := true
+
+# Inherit the proprietary files
+include vendor/samsung/a05m/BoardConfigVendor.mk
