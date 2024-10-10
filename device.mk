@@ -108,10 +108,11 @@ PRODUCT_TARGET_VNDK_VERSION := 31
 PRODUCT_EXTRA_VNDK_VERSIONS := 31
 
 # Inherit the proprietary files
+
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
-    hardware/samsung_ext
+    hardware/samsung
 
 # Inherit the proprietary files
 $(call inherit-product, vendor/samsung/a05m/a05m-vendor.mk)
