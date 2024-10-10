@@ -189,4 +189,3 @@ TARGET_HAS_FUSEBLK_SEPOLICY_ON_VENDOR := true
 
 # Inherit the proprietary files
 include vendor/samsung/a05m/BoardConfigVendor.mk
-include hardware/samsung/hidl/Android.mk
