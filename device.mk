@@ -112,11 +112,7 @@ PRODUCT_EXTRA_VNDK_VERSIONS := 31
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
-    hardware/google/interfaces \
-    hardware/google/pixel \
-    hardware/lineage/interfaces/power-libperfmgr \
-    hardware/mediatek \
-    hardware/mediatek/libmtkperf_client 
+    hardware/mediatek 
 
 # Inherit the proprietary files
 $(call inherit-product, vendor/samsung/a05m/a05m-vendor.mk)
