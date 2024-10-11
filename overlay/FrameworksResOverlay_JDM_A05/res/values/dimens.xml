@@ -15,5 +15,4 @@
     <dimen name="status_bar_height_portrait">49.0px</dimen>
     <dimen name="rounded_corner_radius_bottom">38.0dip</dimen>
     <dimen name="rounded_corner_radius_top">38.0dip</dimen>
-    <dimen name="status_bar_padding_start">20.0dip</dimen>
 </resources>
